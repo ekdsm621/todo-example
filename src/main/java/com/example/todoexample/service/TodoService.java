@@ -13,6 +13,8 @@ public class TodoService {
     @Autowired
     private TodoRepository todoRepository;
 
+    // FIXME : Todo와 TodoDoC 각각의 의미를 다시 한번 생각해보세요. (layered architecture)
+
     public void createItem(TodoDoc todoDoc) {
         todoRepository.save(todoDoc);
     }
