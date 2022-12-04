@@ -24,7 +24,8 @@ public class TodoController {
     }
 
     @GetMapping("/list")
-    public List<Todo> getList (@RequestParam int page, int limit) {
+    public List<Todo> getList (@RequestParam(value="page",defaultValue="0") int page,
+                               @RequestParam(value="page",defaultValue="0") int limit) {
         if(limit != 0) {
             return todoService.getList(page, limit);
         }else{
